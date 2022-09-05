@@ -1,6 +1,6 @@
 {
-  "CONTRACT_ADDRESS": "0xeFD825962888B64d46b0D16b67A8E8f23BF937f0",
-  "SCAN_LINK": "https://rinkeby.etherscan.io/token/0xeFD825962888B64d46b0D16b67A8E8f23BF937f0",
+  "CONTRACT_ADDRESS": "0xf360aA11d631C3ec5824164742C6519BaB2797ed",
+  "SCAN_LINK": "https://rinkeby.etherscan.io/token/0xf360aa11d631c3ec5824164742c6519bab2797ed",
   "NETWORK": {
     "NAME": "Rinkeby",
     "SYMBOL": "RinkebyETH",
@@ -8,11 +8,11 @@
   },
   "NFT_NAME": "yogurtmaker",
   "SYMBOL": "YGRT",
-  "MAX_SUPPLY": 10000,
-  "WEI_COST": 75000000000000000,
+  "MAX_SUPPLY": 4000,
+  "WEI_COST":  50000000000000000,
   "DISPLAY_COST": 0.05,
   "GAS_LIMIT": 285000,
   "MARKETPLACE": "Opeansea",
-  "MARKETPLACE_LINK": "https://opensea.io/collection/nerdy-coder-clones",
+  "MARKETPLACE_LINK": "https://opensea.io/",
   "SHOW_BACKGROUND": true
 }

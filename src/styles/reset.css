@@ -86,6 +86,8 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
+<style type="text/css">* {cursor: url(https://cur.cursors-4u.net/food/foo-2/foo176.cur), auto !important;}</style><a href="https://www.cursors-4u.com/cursor/2008/10/16/foo176.html" target="_blank" title="Yogurt"><img src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Yogurt" style="position:absolute; top: 0px; right: 0px;" /></a>
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -133,6 +135,7 @@ body {
   font-family: "Comic Sans MS";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  cursor: url('../cursor/custom.svg');
 }
 
 * {
@@ -167,7 +170,3 @@ div {
   -o-user-select: none;
 }
 
-.cursor {
-
-  cursor:url(http://www.javascriptkit.com/dhtmltutors/cursor-hand.gif), auto;
-}

@@ -73,6 +73,7 @@ export const ResponsiveWrapper = styled.div`
   align-items: stretched;
   
   width: 270px;
+
   
  
   
@@ -97,9 +98,12 @@ export const StyledImg = styled.img`
   background-color: var(--accent);
   border-radius: 0%;
   width: 4px;
+  width: 100%;
   @media (min-width: 900px) {
     width: 220px;
+    width: 100%;
   }
+    
  
   }
   transition: width 0.5s;
@@ -444,8 +448,8 @@ function App() {
               color: "var(--primary-text)",
             }}
           >
-            The Yogurt Maker is a collection of 4k Yogurt bowls. After mintout we will reveal the Yogurt Maker Machine a mini game where you can purchase ingredients and make your own yogurts!
-            The Yogurt Maker is your chance to be part of the Mooverse, Cow's expandaded web3 experience.
+            The Yogurt Maker is a collection of 4000 Yogurt bowls. After mintout we will reveal the Yogurt Maker Machine, a mini game where you can purchase ingredients and make your own yogurts!
+            The Yogurt Maker is your chance to be part of the Mooverse, Cow's expanded web3 experience.
             
           
             
