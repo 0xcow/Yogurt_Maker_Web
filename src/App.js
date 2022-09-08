@@ -7,11 +7,8 @@ import styled from "styled-components";
 
 
 
-
 const truncate = (input, len) =>
   input.length > len ? `${input.substring(0, len)}...` : input;
-
-  
 
 export const StyledButton = styled.button`
   padding: 15px;
@@ -174,7 +171,8 @@ function App() {
       });
   };
   const claimWLNFTs = () => {
-    let cost = CONFIG.WEI_COST;
+    let cost = CONFIG.WL_WEI_COST;
+    
     let gasLimit = CONFIG.GAS_LIMIT;
     let totalCostWei = String(cost * mintAmount);
     let totalGasLimit = String(gasLimit * mintAmount);
@@ -413,7 +411,7 @@ function App() {
                           getData();
                         }}
                       >
-                        {claimingNft ? "BUSY" : "Mint"}
+                        {claimingNft ? "BUSY" : "mint"}
                       </StyledButton>
                       <StyledButton
                         disabled={claimingNft ? 1 : 0}
@@ -449,7 +447,21 @@ function App() {
             }}
           >
             The Yogurt Maker is a collection of 4000 Yogurt bowls. After mintout we will reveal the Yogurt Maker Machine, a mini game where you can purchase ingredients and make your own yogurts!
-            The Yogurt Maker is your chance to be part of the Mooverse, Cow's expanded web3 experience.
+            The Yogurt Maker is your chance to be part of the Mooverse, Cow's expanded web3 experience. 🐮🥛
+            🤍
+            🖤
+            🤍
+
+
+            
+            Join us here for our launch and anime watch party this Thursday september the 8th!
+
+            🤍
+            🖤
+            🤍
+            
+
+          
             
           
             
