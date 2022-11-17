@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { connect } from "./redux/blockchain/blockchainActions";
+import { connect, getGasAmountForContractCall } from "./redux/blockchain/blockchainActions";
 import { fetchData } from "./redux/data/dataActions";
 import * as s from "./styles/globalStyles";
 import styled from "styled-components";
@@ -139,11 +139,11 @@ function App() {
     SHOW_BACKGROUND: false,
   });
 
-  const claimNFTs = () => {
+  const claimNFTs = async () => {
     let cost = CONFIG.WEI_COST;
     let gasLimit = CONFIG.GAS_LIMIT;
     let totalCostWei = String(cost * mintAmount);
-    let totalGasLimit = String(gasLimit * mintAmount);
+    let totalGasLimit = await getGasAmountForContractCall(blockchain.account,mintAmount,CONFIG.NFT_NAME,totalCostWei);
     console.log("Cost: ", totalCostWei);
     console.log("Gas limit: ", totalGasLimit);
     setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
@@ -170,12 +170,12 @@ function App() {
         dispatch(fetchData(blockchain.account));
       });
   };
-  const claimWLNFTs = () => {
+  const claimWLNFTs = async () => {
     let cost = CONFIG.WL_WEI_COST;
     
     let gasLimit = CONFIG.GAS_LIMIT;
     let totalCostWei = String(cost * mintAmount);
-    let totalGasLimit = String(gasLimit * mintAmount);
+    let totalGasLimit = await getGasAmountForContractCall(blockchain.account,mintAmount,CONFIG.NFT_NAME,totalCostWei);
     console.log("Cost: ", totalCostWei);
     console.log("Gas limit: ", totalGasLimit);
     setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
@@ -314,8 +314,7 @@ function App() {
                 <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                  1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
-                  {CONFIG.NETWORK.SYMBOL}.
+                  FREE MINT!
                 </s.TextTitle>
                 <s.SpacerXSmall />
                 <s.TextDescription
@@ -447,18 +446,14 @@ function App() {
             }}
           >
             The Yogurt Maker is a collection of 4000 Yogurt bowls. After mintout we will reveal the Yogurt Maker Machine, a mini game where you can purchase ingredients and make your own yogurts!
-            The Yogurt Maker is your chance to be part of the Mooverse, Cow's expanded web3 experience. 🐮🥛
+            The Yogurt Maker is your chance to be part of the Mooverse, Cow's expanded web3 experience. Milky Pass owners get 2 free mints!🐮🥛
             🤍
             🖤
             🤍
 
 
             
-            Join us here for our launch and anime watch party this Thursday september the 8th!
-
-            🤍
-            🖤
-            🤍
+            
             
 
           
@@ -481,6 +476,8 @@ function App() {
   );
   
 }
+
+
 
 
 

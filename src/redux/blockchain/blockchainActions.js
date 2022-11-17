@@ -98,3 +98,34 @@ export const updateAccount = (account) => {
     dispatch(fetchData(account));
   };
 };
+
+export const getGasAmountForContractCall = async (fromAddress, amount, contractAddress,val) => {
+  const abiResponse = await fetch("/config/abi.json", {
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  });
+  const abi = await abiResponse.json();  
+    const configResponse = await fetch("/config/config.json", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    });
+    const CONFIG = await configResponse.json();
+    const { ethereum } = window;
+    const metamaskIsInstalled = ethereum && ethereum.isMetaMask;
+    if (metamaskIsInstalled) {
+      Web3EthContract.setProvider(ethereum);
+      let web3 = new Web3(ethereum);
+      const SmartContractObj = new Web3EthContract(
+        abi,
+        CONFIG.CONTRACT_ADDRESS
+      );  
+      console.log(val);
+      var gasAmount = await SmartContractObj.methods.mint(amount).estimateGas({ value: val,from: fromAddress })
+      return await gasAmount;
+    }
+};
+
